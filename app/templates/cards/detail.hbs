@@ -1,0 +1,21 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">{{input class="form-input" placeholder="title" type="text" value=model.title}}</h5>
+      {{#link-to "cards" class="btn btn-sm cancel-icon" tagName="button"}}
+        <span aria-hidden="true">&times;</span>
+      {{/link-to}}
+    </div>
+    <div class="modal-body">
+      {{input class="form-input" type="hidden" type="text" value=model.id}}
+      {{input class="form-input" type="hidden" type="text" value=model.list}}
+      {{input class="form-input textarea" placeholder="description" type="textarea" value=model.description}}
+    </div>
+    <div class="modal-footer">
+      <div class="form-buttons">
+        <button {{action "updateCard" model}} class="btn btn-success btn-sm">Update</button>
+        <button {{action "deleteCardAfterConfirm" model}} class="btn btn-danger btn-sm">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

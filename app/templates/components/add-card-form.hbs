@@ -1,0 +1,12 @@
+{{#if showForm}}
+  <form {{action "appendCardToListAndResetForm" on="submit"}} class="add-card-form">
+    {{input class="form-input" type="text" value=title}}
+    {{input class="form-input" type="hidden" type="text" value=list}}
+    <div class="form-buttons">
+      <button type="submit" class="btn btn-success btn-sm">Add</button>
+      <button {{action "hideForm"}} class="btn btn-sm">X</button>
+    </div>
+  </form>
+{{else}}
+  <button {{action "showForm"}} class="btn btn-sm add-link">Add an item</button>
+{{/if}}

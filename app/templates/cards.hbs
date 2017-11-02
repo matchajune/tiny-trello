@@ -1,0 +1,19 @@
+{{#each-in (group-by "list" model) as |list cards|}}
+  <div class="cards">
+    <ul class="list">
+      <h5>{{list}}</h5>
+      {{#each cards as |card|}}
+        {{#if card.title}}
+         {{#link-to "cards.detail" card}}
+            <div class="card">{{card.title}}</div>
+          {{/link-to}}
+        {{/if}}
+      {{/each}}
+        {{add-card-form list=list}}
+    </ul>
+  </div>
+{{/each-in}}
+
+{{new-card-form class="cards"}}
+
+{{outlet}}
